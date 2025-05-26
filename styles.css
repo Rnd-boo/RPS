@@ -7,10 +7,10 @@
 }
 
 :root {
-  --very-dark-blue: #0a0a23;
+  --very-dark-blue: #2D0218;
   --white: #ffffff;
-  --yellow: #f1be32;
-  --golden-yellow: #feac32;
+  --yellow: #Fea2d0;
+  --golden-yellow: #7C0a41;
 }
 
 body {
@@ -25,17 +25,48 @@ h1 {
 
 .btn {
   cursor: pointer;
-  width: 100px;
-  margin: 10px;
+  margin: 2rem 0;
+  /* Responsive width and height - smaller on mobile */
+  width: min(250px, 45vw);
+  height: min(250px, 45vw);
+  max-width: 250px;
+  max-height: 250px;
+  min-width: 120px;
+  min-height: 120px;
   color: var(--very-dark-blue);
   background-color: var(--golden-yellow);
-  background-image: linear-gradient(#fecc4c, #ffac33);
-  border-color: var(--golden-yellow);
-  border-width: 3px;
+  background-image: linear-gradient(#Fea2d0, #d8448c);
+  border-radius: 1rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .btn:hover {
-  background-image: linear-gradient(#ffcc4c, #f89808);
+  background-image: linear-gradient(#Fea2d0, #7C0a41);
+}
+
+.btn-container {
+  display: flex;
+  width: 90%;
+  max-width: 800px;
+  justify-content: center;
+  margin: auto;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.btn-img {
+  width: min(100px, 18vw);
+  height: min(150px, 25vw);
+  max-width: 100px;
+  max-height: 150px;
+  min-width: 45px;
+  min-height: 70px;
+  object-fit: contain;
 }
 
 .rules-container {
@@ -47,12 +78,73 @@ h1 {
   color: var(--very-dark-blue);
 }
 
+#summary {
+  cursor: pointer;
+}
+
+#reset-game-btn {
+  width: 100px;
+  height: 40px;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  border: 2px solid var(--yellow);
+}
+
 .rules-container ul {
   list-style-type: none;
 }
 
 .rules-container p {
   margin: 10px 0;
+}
+
+/* Mobile-first responsive design */
+@media (max-width: 480px) {
+  .btn {
+    width: min(140px, 40vw);
+    height: min(140px, 40vw);
+    margin: 1rem 0;
+  }
+  
+  .btn-img {
+    width: min(60px, 15vw);
+    height: min(90px, 22vw);
+  }
+  
+  .btn-container {
+    width: 95%;
+    gap: 0.5rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .btn {
+    width: min(160px, 35vw);
+    height: min(160px, 35vw);
+  }
+  
+  .btn-img {
+    width: min(70px, 16vw);
+    height: min(105px, 24vw);
+  }
+}
+
+@media (min-width: 769px) {
+  .btn {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .btn-img {
+    width: 100px;
+    height: 150px;
+  }
+  
+  .btn-container {
+    width: 60%;
+  }
 }
 
 @media (min-width: 760px) {
@@ -79,6 +171,8 @@ h1 {
 
 #winner-msg {
   margin-top: 25px;
+  font-size: larger;
+  font-weight: bold;
 }
 
 #reset-game-btn {

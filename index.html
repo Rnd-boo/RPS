@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock, Paper, Scissors game</title>
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
   </head>
   <body>
     <h1>Let's play Rock, Paper, Scissors!</h1>
     <main>
       <details class="rules-container">
-        <summary>Rules to the game</summary>
+        <summary id="summary">Rules to the game</summary>
 
         <p>You will be playing against the computer.</p>
         <p>You can choose between Rock, Paper, and Scissors.</p>
@@ -30,20 +31,34 @@
           <span class="score" id="computer-score">0</span></strong
         >
       </div>
-
       <section class="options-container">
         <h2>Choose an option:</h2>
         <div class="btn-container">
-          <button id="rock-btn" class="btn">Rock</button>
-          <button id="paper-btn" class="btn">Paper</button>
-          <button id="scissors-btn" class="btn">Scissors</button>
+          <div class="btn-option-container">
+            <button id="rock-btn" class="btn">
+              <img class="btn-img" src="images/Batu.png" alt="Rock" />
+              <p>Rock</p>
+            </button>
+          </div>
+          <div class="btn-option-container">
+            <button id="paper-btn" class="btn">
+              <img class="btn-img" src="images/Kertas.png" alt="Rock" />
+              <p>Paper</p>
+            </button>
+          </div>
+          <div class="btn-option-container">
+            <button id="scissors-btn" class="btn">
+              <img class="btn-img" src="images/Gunting.png" alt="Rock" />
+              <p>Scissors</p>
+            </button>
+          </div>
         </div>
       </section>
 
       <div class="results-container">
         <p id="results-msg"></p>
         <p id="winner-msg"></p>
-        <button class="btn" id="reset-game-btn">Play again?</button>
+        <button id="reset-game-btn">Play again?</button>
       </div>
     </main>
     <script src="./script.js"></script>
